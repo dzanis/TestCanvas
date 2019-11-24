@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Test Canvas</title>
+  <style>
+  body{ margin:0; padding:0;} /* to remove the top and left whitespace */	 
+canvas {
+	  /* the canvas *must not* have any border or padding, or mouse coords will be wrong */	
+	 border: 0px none; background-color: black;	 
+}
+  </style>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 ></canvas>
+
+  <script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+window.addEventListener('resize', resizeCanvas, false);
+function resizeCanvas()
+{					
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;		
+ctx.fillStyle = "white";
+ctx.fillText(window.innerWidth +'x'+window.innerHeight,20, 145);
+}
+resizeCanvas();
+  </script>
+
+</body>
+</html>

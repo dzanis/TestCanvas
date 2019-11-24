@@ -2,33 +2,22 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Test Canvas</title>
-  <style>
-  body{ margin:0; padding:0;} /* to remove the top and left whitespace */	 
-canvas {
-	  /* the canvas *must not* have any border or padding, or mouse coords will be wrong */	
-	 border: 0px none; background-color: black;	 
+   <style>
+  .result-iframe {
+    border: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
-  </style>
+ </style>
 </head>
 <body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 ></canvas>
-
-  <script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-window.addEventListener('resize', resizeCanvas, false);
-function resizeCanvas()
-{					
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;		
-ctx.fillStyle = "white";
-ctx.fillText(window.innerWidth +'x'+window.innerHeight,20, 145);
-}
-resizeCanvas();
-  </script>
-
+<iframe id="result" src="canvas.html" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" allowTransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe"></iframe>
 </body>
 </html>
