@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Test Canvas</title>
+  <title>Canvas</title>
    <style>
-  .result-iframe {
-    border: 0;
-    background: white;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.content {
+  max-width: 500px;
+  margin: auto;
 }
  </style>
 </head>
 <body>
-<iframe src="canvas.html" class="result-iframe"></iframe>
+<div class="content">
+  <!-- Page content -->
+ <p style="text-align: center;">Столкнулся с проблемой на html5 canvas в браузерах смартфона.При повороте из ладшафтного в портретную ориентацию,размер window.innerWidth и window.innerHeight становится больше.</p>
+<p style="text-align: center;"><img src="portrait.jpg" alt="" width="50%" height="50%" /></p></p>
+<p style="text-align: center;">Например в портретной ориентации размеры 360x640,поворачиваю в ландшафтную,размер меняется на 720x280.</p>
+<p style="text-align: center;"><img src="landscape.jpg" alt="" width="50%" height="50%"/></p>
+<p style="text-align: center;">После поворота обратно в портретную размер уже больше,т.е 720x1280.</p>
+<p style="text-align: center;"><img src="portrait_after_landscape.jpg" alt="" width="50%" height="50%" /></p>
+<p style="text-align: center;">А если вернуть в ландшафтную то она не увеличивается,а такая же&nbsp;720x280. Почему-то после поворотов в портретной ориентации из 360x640 он решил стать&nbsp;720x1280.Можно вернуть нормальные&nbsp;360x640 только после перезагрузки страницы.</p>
+<p style="text-align: center;"><a href="canvas.html">canvas</a></p>
+<p style="text-align: center;">Получается что&nbsp;viewport сбрасывается после смены ориентации на реальные пикселы именно на портретной.Но если взять эту страницу и отобразить через iframe,с размерами в портретной ориентации всё нормально.С чем это связанно я пока не нашёл.</p>
+<p style="text-align: center;"><a href="iframe.html">canvas in frame</a></p>
+</div>
+
 </body>
 </html>
