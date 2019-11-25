@@ -5,17 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
   <title>Test Canvas</title>
   <style>
-  html, body {overflow: hidden;}
-  body{ margin:0; padding:0;} /* to remove the top and left whitespace */	 
-canvas {
-	  /* the canvas *must not* have any border or padding, or mouse coords will be wrong */	
-	 border: 0px none; background-color: black;	 
-}
+  * { margin:0; padding:0; } /* to remove the top and left whitespace */
+	html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+	canvas {border: 0px none; background-color: black;}
   </style>
 </head>
 <body>
-<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 ></canvas>
-
+<canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 ></canvas>
   <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -25,7 +21,9 @@ function resizeCanvas()
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;		
 ctx.fillStyle = "white";
-ctx.fillText(window.innerWidth +'x'+window.innerHeight,20, 145);
+ctx.textAlign = "center";
+ctx.font = "30px Arial";
+ctx.fillText(window.innerWidth+'x'+window.innerHeight,window.innerWidth/2, window.innerHeight/2);
 }
 resizeCanvas();
   </script>
