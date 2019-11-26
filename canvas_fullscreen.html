@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-  <title>Test Canvas</title>
+  <title>CanvasFullScreen</title>
   <style>
   * { margin:0; padding:0; } /* to remove the top and left whitespace */
 	html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
 	canvas {border: 0px none; background-color: black;}
+	button {position:absolute;width:33%;left:33%;bottom:5%}
   </style>
 </head>
 <body>
 <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 ></canvas>
+<button id='button'onclick='document.documentElement.requestFullscreen()' >full screen</button> 
   <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
