@@ -9,11 +9,14 @@
 	html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
 	canvas {border: 0px none; background-color: black;}
 	button {position:absolute;width:33%;left:33%;bottom:5%}
+	.canvas-container{position: relative;width:100%; height:100%;}
   </style>
 </head>
 <body>
+<div class="canvas-container">
 <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 ></canvas>
 <button id='button'onclick='document.documentElement.requestFullscreen()' >full screen</button> 
+</div> 
   <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
