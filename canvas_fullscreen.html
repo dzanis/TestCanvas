@@ -23,8 +23,8 @@ var ctx = canvas.getContext("2d");
 window.addEventListener('resize', resizeCanvas, false);
 function resizeCanvas()
 {					
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;		
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;		
 ctx.fillStyle = "white";
 ctx.textAlign = "center";
 ctx.font = "30px Arial";
